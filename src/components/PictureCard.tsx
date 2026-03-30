@@ -296,7 +296,7 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
             alt="확대"
             style={{
               maxWidth: '95vw',
-              maxHeight: '82dvh',
+              maxHeight: '78dvh',
               borderRadius: '4px',
               boxShadow: 'none',
               objectFit: 'contain',

@@ -22,6 +22,7 @@ const Logo = ({ data }: { data?: any }) => {
         alignItems: 'center',
         minWidth: 0,
         maxWidth: '100%',
+        overflow: 'hidden',
       }}
       onClick={goToMain}
     >
