@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 const ProfileItem = ({ item, accentColor }: any) => (
   <div style={{
-    display: 'flex', gap: '35px', padding: '30px', backgroundColor: '#fff', 
-    alignItems: 'center', borderRadius: '16px', border: '1px solid #f0f0f0', 
+    display: 'flex', gap: '35px', padding: '30px', backgroundColor: '#fff',
+    alignItems: 'center', borderRadius: '16px', border: '1px solid #f0f0f0',
     boxShadow: 'none',
     transition: 'transform 0.3s ease',
   }}>
@@ -29,12 +29,12 @@ const ProfileItem = ({ item, accentColor }: any) => (
 const DefaultItem = ({ item, accentColor }: any) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <div 
+    <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        backgroundColor: '#fff', padding: '20px', borderRadius: '12px', 
-        border: '1px solid #f0f0f0', display: 'flex', flexDirection: 'column', gap: '6px', 
+        backgroundColor: '#fff', padding: '20px', borderRadius: '12px',
+        border: '1px solid #f0f0f0', display: 'flex', flexDirection: 'column', gap: '6px',
         boxShadow: 'none',
         transform: isHovered ? 'translateY(-5px)' : 'translateY(0)',
         transition: 'all 0.3s ease', textAlign: 'center'
@@ -72,18 +72,18 @@ const TabButton = ({ cat, isActive, onClick, accentColor }: any) => {
 };
 
 const StaffCard = ({ data, themeColor }: { data?: any, themeColor?: string }) => {
-  const actualData = data?.staffData || data; 
+  const actualData = data?.staffData || data;
 
-  const accentColor = 
-    themeColor || 
-    actualData?.accentColor || 
-    data?.accentColor || 
-    data?.theme?.main || 
-    actualData?.theme?.main || 
+  const accentColor =
+    themeColor ||
+    actualData?.accentColor ||
+    data?.accentColor ||
+    data?.theme?.main ||
+    actualData?.theme?.main ||
     '#7a0039';
 
   const [activeTab, setActiveTab] = useState(actualData?.categories?.[0]?.id);
-  
+
   if (!actualData || !actualData.categories) return null;
 
   const currentCategory = actualData.categories.find((cat: any) => cat.id === activeTab);
@@ -146,7 +146,7 @@ const StaffCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
           );
         })}
       </main>
-      
+
       {actualData.footer && (
         <footer style={{ textAlign: 'center', color: '#bbb', marginTop: '40px', fontSize: '13px' }}>
           {actualData.footer}

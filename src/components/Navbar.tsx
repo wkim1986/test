@@ -12,7 +12,6 @@ const Navbar = ({ data }: { data?: any }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   useEffect(() => {
-    // 라우팅 변경 시 모바일 메뉴 닫기
     setIsDrawerOpen(false);
   }, [currentPath]);
 

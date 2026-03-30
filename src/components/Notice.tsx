@@ -4,22 +4,22 @@ const NoticeItem = ({ item, accentColor }: any) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div style={{ 
-      marginBottom: '16px', 
-      borderRadius: '12px', 
-      border: '1px solid #f0f0f0', 
+    <div style={{
+      marginBottom: '16px',
+      borderRadius: '12px',
+      border: '1px solid #f0f0f0',
       backgroundColor: '#fff',
       overflow: 'hidden',
       transition: 'all 0.3s ease',
       boxShadow: 'none'
     }}>
-      <div 
+      <div
         onClick={() => setIsOpen(!isOpen)}
-        style={{ 
-          padding: '20px 25px', 
-          cursor: 'pointer', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
+        style={{
+          padding: '20px 25px',
+          cursor: 'pointer',
+          display: 'flex',
+          justifyContent: 'space-between',
           alignItems: 'center',
           backgroundColor: isOpen ? '#fcfcfc' : '#fff'
         }}
@@ -27,8 +27,8 @@ const NoticeItem = ({ item, accentColor }: any) => {
         <div style={{ flex: 1 }}>
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '6px' }}>
             {item.isImportant && (
-              <span style={{ 
-                fontSize: '11px', fontWeight: '700', color: '#fff', 
+              <span style={{
+                fontSize: '11px', fontWeight: '700', color: '#fff',
                 backgroundColor: accentColor, padding: '2px 8px', borderRadius: '4px'
               }}>
                 NEW
@@ -40,8 +40,8 @@ const NoticeItem = ({ item, accentColor }: any) => {
             {item.title}
           </h3>
         </div>
-        <div style={{ 
-          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', 
+        <div style={{
+          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
           transition: 'transform 0.3s ease', fontSize: '18px', color: isOpen ? accentColor : '#ccc'
         }}>
           ▾

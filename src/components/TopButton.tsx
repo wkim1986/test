@@ -5,7 +5,6 @@ const TopButton = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // 400px 이상 스크롤 시 버튼 표시
       setIsVisible(window.scrollY > 400);
     };
     window.addEventListener('scroll', handleScroll);
@@ -28,12 +27,12 @@ const TopButton = () => {
         width: '46px',
         height: '46px',
         borderRadius: '50%',
-        backgroundColor: 'rgba(255, 255, 255, 0.4)', 
+        backgroundColor: 'rgba(255, 255, 255, 0.4)',
         color: '#333333',
         border: '1px solid rgba(0, 0, 0, 0.05)',
         cursor: 'pointer',
         zIndex: 100000,
-        backdropFilter: 'blur(10px)', 
+        backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)',
         boxShadow: 'none',
         display: 'flex',
@@ -48,7 +47,7 @@ const TopButton = () => {
         target.style.color = '#ffffff';
         target.style.borderColor = '#333333';
         target.style.backdropFilter = 'none';
-        target.style.transform = 'translateY(-3px)'; // 살짝 떠오르는 효과 추가
+        target.style.transform = 'translateY(-3px)';
       }}
       onMouseLeave={(e) => {
         const target = e.currentTarget;
@@ -59,14 +58,14 @@ const TopButton = () => {
         target.style.transform = 'translateY(0)';
       }}
     >
-      <svg 
-        width="20" 
-        height="20" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth="2.5" 
-        strokeLinecap="round" 
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
         strokeLinejoin="round"
       >
         <path d="M18 15l-6-6-6 6" />

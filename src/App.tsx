@@ -28,12 +28,10 @@ const App = () => {
 
   const headerHeight = globalMeta.layout?.header?.height || '100px';
 
-  // ✅ 페이지 전환 시 스크롤 최상단 이동
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location]);
 
-  // ✅ 모바일 여부 확인
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 768px)');
     const updateIsMobile = () => setIsMobile(mediaQuery.matches);
@@ -76,7 +74,6 @@ const App = () => {
     const dy = touch.clientY - startPointRef.current.y;
     startPointRef.current = null;
 
-    // 가로 스와이프일 때만 동작
     if (Math.abs(dx) < SWIPE_THRESHOLD_PX) return;
     if (Math.abs(dy) > VERTICAL_TOLERANCE_PX && Math.abs(dy) > Math.abs(dx)) return;
 

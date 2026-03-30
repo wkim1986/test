@@ -3,7 +3,7 @@ const SectionHeader = ({ data }: { data?: any }) => {
 
   const theme = data.theme;
   const systemAccent = theme?.main || data.accentColor || '#000';
-  
+
   const {
     title,
     subtitle,
@@ -12,11 +12,11 @@ const SectionHeader = ({ data }: { data?: any }) => {
     align = 'center',
     linePosition = 'bottom'
   } = data;
-  
+
   const line = (
-    <div style={{ 
-      width: lineWidth, 
-      height: lineHeight, 
+    <div style={{
+      width: lineWidth,
+      height: lineHeight,
       backgroundColor: systemAccent,
       margin: align === 'center' ? '15px auto' : '15px 0',
       borderRadius: '2px'
@@ -24,23 +24,21 @@ const SectionHeader = ({ data }: { data?: any }) => {
   );
 
   return (
-    <div style={{ 
-      textAlign: align as any, 
+    <div style={{
+      textAlign: align as any,
       width: '100%'
     }}>
       {linePosition === 'top' && line}
-      
-      <h2 style={{ 
-        fontSize: '32px', 
-        fontWeight: '850', 
+
+      <h2 style={{
+        fontSize: '32px',
+        fontWeight: '850',
         color: systemAccent,
         margin: '0',
-        letterSpacing: '-1px'
-        ,
+        letterSpacing: '-1px',
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        // 밋밋함 완화: 타이틀에 미세한 그라데이션 텍스트를 적용
         backgroundImage: `linear-gradient(90deg, ${systemAccent}, rgba(0,0,0,0.85))`,
         WebkitBackgroundClip: 'text',
         backgroundClip: 'text',
@@ -52,9 +50,9 @@ const SectionHeader = ({ data }: { data?: any }) => {
       {linePosition === 'middle' && line}
 
       {subtitle && (
-        <p style={{ 
-          color: '#888', 
-          fontSize: '17px', 
+        <p style={{
+          color: '#888',
+          fontSize: '17px',
           margin: '12px 0 0 0',
           lineHeight: '1.5',
           wordBreak: 'keep-all'

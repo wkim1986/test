@@ -14,7 +14,7 @@ const Button = ({ data }: { data?: any }) => {
     const themeColor = (isInternalLink ? getThemeColorForPath(item.link) : undefined) || item.color || '#ffffff';
 
     return {
-      background: `linear-gradient(145deg, ${themeColor}15, ${themeColor}40)`, 
+      background: `linear-gradient(145deg, ${themeColor}15, ${themeColor}40)`,
       backdropFilter: 'blur(20px) saturate(180%)',
       WebkitBackdropFilter: 'blur(20px) saturate(180%)',
       border: '1px solid rgba(255, 255, 255, 0.4)',
@@ -32,7 +32,6 @@ const Button = ({ data }: { data?: any }) => {
       aspectRatio: '1 / 1',
       padding: '24px',
       boxShadow: 'none',
-      // 그림자 효과 제거
       transition: 'all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)',
       position: 'relative' as const,
       userSelect: 'none' as const,
@@ -55,15 +54,15 @@ const Button = ({ data }: { data?: any }) => {
   };
 
   return (
-    <div style={{ 
+    <div style={{
       display: 'grid',
       gridTemplateColumns: `repeat(auto-fit, minmax(${itemCount > 6 ? '120px' : '180px'}, ${itemCount > 4 ? '1fr' : '220px'}))`,
       justifyContent: 'center',
-      gap: '30px', 
-      width: '100%', 
-      maxWidth: '1200px', 
-      margin: '0 auto', 
-      padding: '0 20px' 
+      gap: '30px',
+      width: '100%',
+      maxWidth: '1200px',
+      margin: '0 auto',
+      padding: '0 20px'
     }}>
       {data.items.map((item: any) => {
         const isExternal = item.link && item.link.startsWith('http');
@@ -87,28 +86,28 @@ const Button = ({ data }: { data?: any }) => {
 
         const Content = (
           <>
-            <div style={{ 
-              fontSize: itemCount > 7 ? '40px' : '56px', 
+            <div style={{
+              fontSize: itemCount > 7 ? '40px' : '56px',
               marginBottom: '12px',
               filter: 'none',
             }}>
               {item.icon}
             </div>
-            <div style={{ 
-              fontSize: itemCount > 7 ? '16px' : '19px', 
-              textAlign: 'center', 
-              wordBreak: 'keep-all', 
+            <div style={{
+              fontSize: itemCount > 7 ? '16px' : '19px',
+              textAlign: 'center',
+              wordBreak: 'keep-all',
               lineHeight: '1.2',
               letterSpacing: '-0.3px'
             }}>
               {item.name}
             </div>
             {item.subText && itemCount <= 6 && (
-              <div style={{ 
-                fontSize: '12px', 
-                marginTop: '12px', 
-                opacity: 0.6, 
-                fontWeight: '600' 
+              <div style={{
+                fontSize: '12px',
+                marginTop: '12px',
+                opacity: 0.6,
+                fontWeight: '600'
               }}>
                 {item.subText}
               </div>

@@ -10,7 +10,7 @@ const VisionCard = ({ item, theme, index }: any) => {
   }, [index]);
 
   return (
-    <div 
+    <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
@@ -23,16 +23,16 @@ const VisionCard = ({ item, theme, index }: any) => {
         gap: '15px',
         cursor: 'default',
         opacity: isVisible ? 1 : 0,
-        transform: isVisible 
-          ? (isHovered ? 'translateY(-10px)' : 'translateY(0)') 
+        transform: isVisible
+          ? (isHovered ? 'translateY(-10px)' : 'translateY(0)')
           : 'translateY(20px)',
-        transition: 'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)', 
+        transition: 'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)',
         boxShadow: 'none',
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
         <div style={{
-          backgroundColor: theme.lightBg, 
+          backgroundColor: theme.lightBg,
           color: theme.accentColor,
           width: '42px', height: '42px', borderRadius: '12px',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -42,10 +42,10 @@ const VisionCard = ({ item, theme, index }: any) => {
         }}>
           {item.letter}
         </div>
-        <div style={{ 
-          color: theme.accentColor, 
-          fontSize: '12px', 
-          fontWeight: '700', 
+        <div style={{
+          color: theme.accentColor,
+          fontSize: '12px',
+          fontWeight: '700',
           letterSpacing: '0.5px',
           opacity: 0.5
         }}>
@@ -54,20 +54,20 @@ const VisionCard = ({ item, theme, index }: any) => {
       </div>
 
       <div style={{ marginTop: '5px' }}>
-        <h3 style={{ 
-          fontSize: '19px', 
-          fontWeight: '800', 
-          color: '#111', 
+        <h3 style={{
+          fontSize: '19px',
+          fontWeight: '800',
+          color: '#111',
           marginBottom: '10px',
         }}>
           {item.title}
         </h3>
-        <p style={{ 
-          color: '#666', 
-          lineHeight: '1.7', 
-          fontSize: '15px', 
-          margin: 0, 
-          wordBreak: 'keep-all' 
+        <p style={{
+          color: '#666',
+          lineHeight: '1.7',
+          fontSize: '15px',
+          margin: 0,
+          wordBreak: 'keep-all'
         }}>
           {item.desc}
         </p>
@@ -84,44 +84,44 @@ const Vision = ({ data, themeColor }: { data?: any, themeColor?: string }) => {
 
   return (
     <div style={{ width: '100%' }}>
-      <div style={{ 
-        width: '100%', 
-        maxWidth: '1200px', 
-        margin: '0 auto', 
-        padding: '0 20px', 
+      <div style={{
+        width: '100%',
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 20px',
         fontFamily: 'Pretendard, sans-serif'
       }}>
-        <div style={{ 
-          padding: '50px 40px', 
+        <div style={{
+          padding: '50px 40px',
           background: `linear-gradient(135deg, ${accentColor} 0%, ${accentColor}dd 100%)`,
-          color: '#fff', 
-          borderRadius: '24px', 
-          textAlign: 'center', 
-          marginBottom: '40px' 
+          color: '#fff',
+          borderRadius: '24px',
+          textAlign: 'center',
+          marginBottom: '40px'
         }}>
-          <p style={{ 
-            fontSize: '20px', 
-            lineHeight: '1.7', 
-            margin: 0, 
-            fontWeight: '600', 
+          <p style={{
+            fontSize: '20px',
+            lineHeight: '1.7',
+            margin: 0,
+            fontWeight: '600',
             wordBreak: 'keep-all',
-            opacity: 0.95 
+            opacity: 0.95
           }}>
             {data.banner}
           </p>
         </div>
 
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-          gap: '24px' 
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '24px'
         }}>
           {data.items?.map((item: any, index: number) => (
-            <VisionCard 
-              key={item.letter} 
-              item={item} 
-              theme={{ accentColor, lightBg }} 
-              index={index} 
+            <VisionCard
+              key={item.letter}
+              item={item}
+              theme={{ accentColor, lightBg }}
+              index={index}
             />
           ))}
         </div>

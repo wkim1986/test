@@ -28,8 +28,8 @@ const Hero = ({ data }: { data?: any }) => {
       backgroundColor: data.backgroundColor || '#000',
     }}>
       {images.map((src: string, i: number) => (
-        <div 
-          key={i} 
+        <div
+          key={i}
           style={{
             position: 'absolute',
             top: 0, left: 0, width: '100%', height: '100%',
@@ -44,16 +44,16 @@ const Hero = ({ data }: { data?: any }) => {
             backgroundColor: `rgba(0,0,0,${data.overlayOpacity || 0})`,
             zIndex: 2
           }} />
-          
-          <img 
-            src={src} 
-            alt={`slide-${i}`} 
+
+          <img
+            src={src}
+            alt={`slide-${i}`}
             style={{
               width: '100%',
               height: '100%',
-              objectFit: data.displayMode === 'full' ? 'cover' : 'contain', 
+              objectFit: data.displayMode === 'full' ? 'cover' : 'contain',
               backgroundColor: 'transparent'
-            }} 
+            }}
           />
         </div>
       ))}
@@ -68,19 +68,19 @@ const Hero = ({ data }: { data?: any }) => {
         width: '100%',
         pointerEvents: 'none'
       }}>
-        <h1 style={{ 
-          fontSize: data.titleSize || '48px', 
-          fontWeight: data.titleWeight || '900', 
+        <h1 style={{
+          fontSize: data.titleSize || '48px',
+          fontWeight: data.titleWeight || '900',
           opacity: data.titleOpacity ?? 1,
-          marginBottom: '20px', 
+          marginBottom: '20px',
           wordBreak: 'keep-all',
           transition: 'all 0.3s ease'
         }}>
           {data.title}
         </h1>
 
-        <p style={{ 
-          fontSize: data.subtitleSize || '20px', 
+        <p style={{
+          fontSize: data.subtitleSize || '20px',
           fontWeight: data.subtitleWeight || '400',
           opacity: data.subtitleOpacity ?? 0.9,
           wordBreak: 'keep-all',

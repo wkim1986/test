@@ -4,11 +4,11 @@ const PictureItem = ({ item, onSelect }: any) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <div
       onClick={onSelect}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ 
+      style={{
         cursor: 'pointer', transition: 'all 0.3s ease', borderRadius: '12px',
         overflow: 'hidden', backgroundColor: '#fff', border: '1px solid #f0f0f0',
         boxShadow: 'none',
@@ -16,14 +16,14 @@ const PictureItem = ({ item, onSelect }: any) => {
       }}
     >
       <div style={{ position: 'relative', aspectRatio: '4/3', overflow: 'hidden', backgroundColor: '#f9f9f9' }}>
-        <img 
-          src={item.url} 
-          alt={item.title} 
-          style={{ 
+        <img
+          src={item.url}
+          alt={item.title}
+          style={{
             width: '100%', height: '100%', objectFit: 'cover',
             transition: 'transform 0.5s ease',
             transform: isHovered ? 'scale(1.08)' : 'scale(1)'
-          }} 
+          }}
         />
         <div style={{
           position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
@@ -34,7 +34,7 @@ const PictureItem = ({ item, onSelect }: any) => {
       </div>
 
       <div style={{ padding: '12px 15px' }}>
-        <div style={{ 
+        <div style={{
           fontWeight: '600', fontSize: '15px', color: '#333',
           whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
         }}>
@@ -73,12 +73,12 @@ const TabButton = ({ cat, isActive, onClick, accentColor }: any) => {
 const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) => {
   const actualData = data?.galleryData || data;
 
-  const accentColor = 
-    themeColor || 
-    actualData?.accentColor || 
-    data?.accentColor || 
-    data?.theme?.main || 
-    actualData?.theme?.main || 
+  const accentColor =
+    themeColor ||
+    actualData?.accentColor ||
+    data?.accentColor ||
+    data?.theme?.main ||
+    actualData?.theme?.main ||
     '#3498db';
 
   const [activeTab, setActiveTab] = useState(actualData?.categories?.[0]?.id);
@@ -93,7 +93,6 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
   const gridCols = actualData.cols || 4;
 
   useEffect(() => {
-    // 탭이 바뀌면 확대 상태를 초기화합니다.
     setSelectedIndex(null);
   }, [activeTab]);
 
@@ -150,7 +149,7 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
   }, [selectedIndex, activeTab, displayItems.length]);
 
   const onOverlayPointerDown = (e: import('react').PointerEvent<HTMLDivElement>) => {
-    if (e.pointerType === 'mouse' && e.button !== 0) return; // 우클릭 등 무시
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
     pointerStartRef.current = { x: e.clientX, y: e.clientY };
   };
 
@@ -159,7 +158,7 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
     pointerStartRef.current = null;
     if (!start) return;
 
-    const dx = e.clientX - start.x; // -: left, +: right
+    const dx = e.clientX - start.x;
     const dy = e.clientY - start.y;
 
     const SWIPE_THRESHOLD = 45;
@@ -168,7 +167,6 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
     if (Math.abs(dx) < SWIPE_THRESHOLD) return;
     if (Math.abs(dy) > VERTICAL_TOLERANCE && Math.abs(dy) > Math.abs(dx)) return;
 
-    // 스와이프 후에는 click 이벤트로 모달이 닫히는 것을 방지
     suppressCloseRef.current = true;
     window.setTimeout(() => {
       suppressCloseRef.current = false;
@@ -181,11 +179,11 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
   const selectedItem = selectedIndex != null ? displayItems[selectedIndex] : null;
 
   return (
-    <div style={{ 
-      width: '100%', maxWidth: '1200px', margin: '0 auto', 
+    <div style={{
+      width: '100%', maxWidth: '1200px', margin: '0 auto',
       padding: '0 5%', fontFamily: 'Pretendard, sans-serif'
     }}>
-      <header style={{ marginBottom: '40px', textAlign: 'center' }}> 
+      <header style={{ marginBottom: '40px', textAlign: 'center' }}>
         <h1 style={{ fontSize: '28px', fontWeight: '800', color: '#111', margin: '0 0 12px 0' }}>
           {actualData.title}
         </h1>
@@ -194,9 +192,9 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
         )}
       </header>
 
-      <nav style={{ 
-        display: 'flex', justifyContent: 'center', gap: '25px', 
-        marginBottom: '40px', borderBottom: '1px solid #eee' 
+      <nav style={{
+        display: 'flex', justifyContent: 'center', gap: '25px',
+        marginBottom: '40px', borderBottom: '1px solid #eee'
       }}>
         {actualData.categories.map((cat: any) => (
           <TabButton
@@ -209,13 +207,13 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
         ))}
       </nav>
 
-      <main style={{ 
-        display: 'grid', 
-        gridTemplateColumns: `repeat(${gridCols}, 1fr)`, 
-        gap: '20px' 
+      <main style={{
+        display: 'grid',
+        gridTemplateColumns: `repeat(${gridCols}, 1fr)`,
+        gap: '20px'
       }}>
         {displayItems.map((item: any, index: number) => (
-          <PictureItem 
+          <PictureItem
             key={`${activeTab}-${index}`}
             item={item}
             onSelect={() => setSelectedIndex(index)}
@@ -224,7 +222,7 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
       </main>
 
       {selectedItem && selectedIndex != null && (
-        <div 
+        <div
           onClick={() => {
             if (suppressCloseRef.current) return;
             setSelectedIndex(null);
@@ -246,7 +244,7 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
             touchAction: 'none',
           }}
         >
-          {/* 좌/우 전환 버튼 (모바일 터치 외에도 클릭 가능) */}
+
           <button
             type="button"
             aria-label="이전 사진"
@@ -293,9 +291,9 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
           >
             ›
           </button>
-          <img 
-            src={selectedItem.url} 
-            alt="확대" 
+          <img
+            src={selectedItem.url}
+            alt="확대"
             style={{
               maxWidth: '95vw',
               maxHeight: '82dvh',
@@ -303,7 +301,7 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
               boxShadow: 'none',
               objectFit: 'contain',
               display: 'block',
-            }} 
+            }}
             onClick={(e) => e.stopPropagation()}
           />
         </div>

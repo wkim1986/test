@@ -14,7 +14,7 @@ const Logo = ({ data }: { data?: any }) => {
   };
 
   return (
-    <div 
+    <div
       style={{
         cursor: 'pointer',
         userSelect: 'none',
@@ -22,20 +22,20 @@ const Logo = ({ data }: { data?: any }) => {
         alignItems: 'center',
         minWidth: 0,
         maxWidth: '100%',
-      }} 
+      }}
       onClick={goToMain}
     >
       {mode === "image" ? (
-        <img 
-          src={src} 
-          alt={text} 
-          style={{ height: styles?.imgHeight || '40px', display: 'block', objectFit: 'contain' }} 
+        <img
+          src={src}
+          alt={text}
+          style={{ height: styles?.imgHeight || '40px', display: 'block', objectFit: 'contain' }}
         />
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1.2' }}>
-          <h1 style={{ 
-            margin: 0, 
-            fontSize: styles?.textSize || '22px', 
+          <h1 style={{
+            margin: 0,
+            fontSize: styles?.textSize || '22px',
             fontWeight: '900',
             color: styles?.textColor || '#111',
             letterSpacing: '-0.5px',

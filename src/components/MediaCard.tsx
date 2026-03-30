@@ -7,7 +7,6 @@ const getYoutubeId = (url: string) => {
   return (match && match[7].length === 11) ? match[7] : url;
 };
 
-// --- 탭 버튼 컴포넌트 (호버 로직 포함) ---
 const TabButton = ({ cat, isActive, onClick, accentColor }: any) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
@@ -22,9 +21,7 @@ const TabButton = ({ cat, isActive, onClick, accentColor }: any) => {
         cursor: 'pointer',
         fontSize: '17px',
         fontWeight: isActive ? '700' : '500',
-        // ✅ 호버하거나 활성화된 경우만 색상 변경
         color: (isActive || isHovered) ? accentColor : '#aaa',
-        // ✅ 클릭(isActive)된 상태에서만 하단 바 표시
         borderBottom: `3px solid ${isActive ? accentColor : 'transparent'}`,
         marginBottom: '-1px',
         transition: 'all 0.25s ease',
@@ -42,11 +39,11 @@ const VideoItem = ({ item, accentColor, onVideoClick }: any) => {
   const thumbUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
-    <div 
+    <div
       onClick={() => onVideoClick(videoId)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ 
+      style={{
         cursor: 'pointer', transition: 'all 0.3s ease', borderRadius: '15px',
         overflow: 'hidden', backgroundColor: '#fff', border: '1px solid #f0f0f0',
         boxShadow: 'none',
@@ -54,38 +51,38 @@ const VideoItem = ({ item, accentColor, onVideoClick }: any) => {
       }}
     >
       <div style={{ position: 'relative', aspectRatio: '16/9', backgroundColor: '#eee', overflow: 'hidden' }}>
-        <img 
-          src={thumbUrl} 
-          alt={item.title} 
-          style={{ 
+        <img
+          src={thumbUrl}
+          alt={item.title}
+          style={{
             width: '100%', height: '100%', objectFit: 'cover',
             transition: 'transform 0.5s ease',
             transform: isHovered ? 'scale(1.08)' : 'scale(1)'
-          }} 
+          }}
         />
-        <div style={{ 
+        <div style={{
           position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
           backgroundColor: isHovered ? 'rgba(0,0,0,0.2)' : 'transparent',
           transition: 'background-color 0.3s ease',
           display: 'flex', alignItems: 'center', justifyContent: 'center'
         }}>
-          <div style={{ 
-            width: '45px', height: '45px', backgroundColor: 'rgba(255,255,255,0.95)', borderRadius: '50%', 
+          <div style={{
+            width: '45px', height: '45px', backgroundColor: 'rgba(255,255,255,0.95)', borderRadius: '50%',
             display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'none'
           }}>
-            <div style={{ 
-              borderTop: '7px solid transparent', 
-              borderBottom: '7px solid transparent', 
+            <div style={{
+              borderTop: '7px solid transparent',
+              borderBottom: '7px solid transparent',
               borderLeft: `12px solid ${accentColor}`,
-              marginLeft: '4px' 
+              marginLeft: '4px'
             }} />
           </div>
         </div>
       </div>
 
       <div style={{ padding: '20px' }}>
-        <div style={{ 
-          fontWeight: '700', fontSize: '17px', color: '#111', 
+        <div style={{
+          fontWeight: '700', fontSize: '17px', color: '#111',
           marginBottom: '8px', lineHeight: '1.4',
           display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'
         }}>
@@ -93,8 +90,8 @@ const VideoItem = ({ item, accentColor, onVideoClick }: any) => {
         </div>
         <div style={{ fontSize: '14px', color: '#666', marginBottom: '4px' }}>{item.scripture}</div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: '12px' }}>
-           <span style={{ fontSize: '14px', color: accentColor, fontWeight: '600' }}>{item.preacher}</span>
-           <span style={{ fontSize: '12px', color: '#bbb' }}>{item.date}</span>
+          <span style={{ fontSize: '14px', color: accentColor, fontWeight: '600' }}>{item.preacher}</span>
+          <span style={{ fontSize: '12px', color: '#bbb' }}>{item.date}</span>
         </div>
       </div>
     </div>
@@ -132,7 +129,7 @@ const MediaCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
 
   return (
     <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 5%', fontFamily: 'Pretendard, sans-serif' }}>
-      <header style={{ marginBottom: '40px', textAlign: 'center' }}> 
+      <header style={{ marginBottom: '40px', textAlign: 'center' }}>
         <h1 style={{ fontSize: '28px', fontWeight: '800', color: '#111', margin: '0 0 12px 0' }}>
           {data.title}
         </h1>
@@ -141,10 +138,9 @@ const MediaCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
         )}
       </header>
 
-      {/* --- 탭 네비게이션 --- */}
-      <nav style={{ 
-        display: 'flex', justifyContent: 'center', gap: '25px', 
-        marginBottom: '40px', borderBottom: '1px solid #eee' 
+      <nav style={{
+        display: 'flex', justifyContent: 'center', gap: '25px',
+        marginBottom: '40px', borderBottom: '1px solid #eee'
       }}>
         {data.categories.map((cat: any) => (
           <TabButton
@@ -167,13 +163,13 @@ const MediaCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
               </div>
             )}
 
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: `repeat(${globalCols}, 1fr)`, 
-              gap: '24px' 
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: `repeat(${globalCols}, 1fr)`,
+              gap: '24px'
             }}>
               {groups[groupKey].map((item: any, index: number) => (
-                <VideoItem 
+                <VideoItem
                   key={`${activeTab}-${index}`}
                   item={item}
                   accentColor={accentColor}
@@ -186,7 +182,7 @@ const MediaCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
       </main>
 
       {selectedVideo && (
-        <div 
+        <div
           onClick={() => setSelectedVideo(null)}
           style={{
             position: 'fixed',
@@ -199,7 +195,7 @@ const MediaCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
             overflow: 'hidden',
           }}
         >
-          <div 
+          <div
             onClick={(e) => e.stopPropagation()}
             style={{
               width: '100%', maxWidth: '900px', aspectRatio: '16/9',
@@ -211,7 +207,6 @@ const MediaCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
             <iframe
               width="100%" height="100%"
               src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-              frameBorder="0"
               allowFullScreen
               title="Youtube Video Player"
             />
