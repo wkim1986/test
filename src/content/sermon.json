@@ -1,0 +1,51 @@
+{
+  "sermonData": {
+    "title": "말씀 영상",
+    "description": "# Next Generation Ministry Sermon",
+    "cols": 3,
+    "categories": [
+      {
+        "id": "kids_sermon",
+        "label": "유아처",
+        "items": [
+          {
+            "id": "kids_sermon_1",
+            "title": "씨씨씨를 뿌리고",
+            "scripture": "마가복음 4:8",
+            "preacher": "Lucy 최기쁨 전도사",
+            "date": "2025-11-09",
+            "youtubeId": "https://www.youtube.com/watch?v=QzyR3tkLUxY"
+          }
+        ]
+      },
+      {
+        "id": "elementary_sermon",
+        "label": "초등처",
+        "items": [
+          {
+            "id": "elementary_sermon_1",
+            "title": "씨씨씨를 뿌리고",
+            "scripture": "마가복음 4:8",
+            "preacher": "Lucy 최기쁨 전도사",
+            "date": "2025-11-09",
+            "youtubeId": "https://www.youtube.com/watch?v=QzyR3tkLUxY"
+          }
+        ]
+      },
+      {
+        "id": "youth_sermon",
+        "label": "청소년처",
+        "items": [
+          {
+            "id": "youth_sermon_1",
+            "title": "씨씨씨를 뿌리고",
+            "scripture": "마가복음 4:8",
+            "preacher": "Lucy 최기쁨 전도사",
+            "date": "2025-11-09",
+            "youtubeId": "https://www.youtube.com/watch?v=QzyR3tkLUxY"
+          }
+        ]
+      }
+    ]
+  }
+}

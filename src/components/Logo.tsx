@@ -1,6 +1,7 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Logo = ({ data }: { data?: any }) => {
+  const navigate = useNavigate();
   const mode = data?.mode;
   const src = data?.src;
   const text = data?.text;
@@ -8,15 +9,20 @@ const Logo = ({ data }: { data?: any }) => {
   const styles = data?.styles;
 
   const goToMain = () => {
-    window.history.pushState({}, '', '/');
-    const navEvent = new PopStateEvent('popstate');
-    window.dispatchEvent(navEvent);
+    navigate('/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div 
-      style={{ cursor: 'pointer', userSelect: 'none', display: 'flex', alignItems: 'center' }} 
+      style={{
+        cursor: 'pointer',
+        userSelect: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        minWidth: 0,
+        maxWidth: '100%',
+      }} 
       onClick={goToMain}
     >
       {mode === "image" ? (
@@ -32,12 +38,25 @@ const Logo = ({ data }: { data?: any }) => {
             fontSize: styles?.textSize || '22px', 
             fontWeight: '900',
             color: styles?.textColor || '#111',
-            letterSpacing: '-0.5px'
+            letterSpacing: '-0.5px',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
           }}>
             {text}
           </h1>
           {tagline && (
-            <span style={{ fontSize: styles?.taglineSize || '12px', fontWeight: '500', color: styles?.taglineColor || '#888' }}>
+            <span
+              style={{
+                fontSize: styles?.taglineSize || '12px',
+                fontWeight: '500',
+                color: styles?.taglineColor || '#888',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                maxWidth: '100%',
+              }}
+            >
               {tagline}
             </span>
           )}

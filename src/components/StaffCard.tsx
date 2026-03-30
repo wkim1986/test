@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const ProfileItem = ({ item, accentColor }: any) => (
   <div style={{
     display: 'flex', gap: '35px', padding: '30px', backgroundColor: '#fff', 
     alignItems: 'center', borderRadius: '16px', border: '1px solid #f0f0f0', 
-    boxShadow: '0 8px 20px rgba(0,0,0,0.04)',
+    boxShadow: 'none',
     transition: 'transform 0.3s ease',
   }}>
     {item.image && (
@@ -35,7 +35,7 @@ const DefaultItem = ({ item, accentColor }: any) => {
       style={{
         backgroundColor: '#fff', padding: '20px', borderRadius: '12px', 
         border: '1px solid #f0f0f0', display: 'flex', flexDirection: 'column', gap: '6px', 
-        boxShadow: isHovered ? '0 10px 20px rgba(0,0,0,0.08)' : '0 2px 8px rgba(0,0,0,0.02)',
+        boxShadow: 'none',
         transform: isHovered ? 'translateY(-5px)' : 'translateY(0)',
         transition: 'all 0.3s ease', textAlign: 'center'
       }}

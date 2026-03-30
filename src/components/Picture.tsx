@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Picture = ({ data }: { data?: any }) => {
   if (!data || !data.src) return null;
 

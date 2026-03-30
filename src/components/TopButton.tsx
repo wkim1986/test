@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const TopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,7 +35,7 @@ const TopButton = () => {
         zIndex: 100000,
         backdropFilter: 'blur(10px)', 
         WebkitBackdropFilter: 'blur(10px)',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+        boxShadow: 'none',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

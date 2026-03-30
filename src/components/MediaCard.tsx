@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 const getYoutubeId = (url: string) => {
   if (!url) return '';
@@ -49,7 +49,7 @@ const VideoItem = ({ item, accentColor, onVideoClick }: any) => {
       style={{ 
         cursor: 'pointer', transition: 'all 0.3s ease', borderRadius: '15px',
         overflow: 'hidden', backgroundColor: '#fff', border: '1px solid #f0f0f0',
-        boxShadow: isHovered ? '0 15px 30px rgba(0,0,0,0.1)' : '0 4px 12px rgba(0,0,0,0.03)',
+        boxShadow: 'none',
         transform: isHovered ? 'translateY(-8px)' : 'translateY(0)'
       }}
     >
@@ -71,7 +71,7 @@ const VideoItem = ({ item, accentColor, onVideoClick }: any) => {
         }}>
           <div style={{ 
             width: '45px', height: '45px', backgroundColor: 'rgba(255,255,255,0.95)', borderRadius: '50%', 
-            display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+            display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'none'
           }}>
             <div style={{ 
               borderTop: '7px solid transparent', 
@@ -110,6 +110,16 @@ const MediaCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
   const currentCategory = data.categories.find((cat: any) => cat.id === activeTab);
   const accentColor = themeColor || data.accentColor || data.theme?.main || '#4B2600';
   const globalCols = data.cols || 3;
+
+  useEffect(() => {
+    if (!selectedVideo) return;
+
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [selectedVideo]);
 
   const groups = useMemo(() => {
     return currentCategory?.items.reduce((acc: any, item: any) => {
@@ -179,17 +189,23 @@ const MediaCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
         <div 
           onClick={() => setSelectedVideo(null)}
           style={{
-            position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+            position: 'fixed',
+            inset: 0,
+            height: '100dvh',
             backgroundColor: 'rgba(0,0,0,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            zIndex: 10000, cursor: 'zoom-out', padding: '20px'
+            zIndex: 10000,
+            cursor: 'zoom-out',
+            padding: '16px',
+            overflow: 'hidden',
           }}
         >
           <div 
             onClick={(e) => e.stopPropagation()}
             style={{
               width: '100%', maxWidth: '900px', aspectRatio: '16/9',
+              maxHeight: '82dvh',
               backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden',
-              boxShadow: '0 20px 50px rgba(0,0,0,0.5)', position: 'relative'
+              boxShadow: 'none', position: 'relative'
             }}
           >
             <iframe

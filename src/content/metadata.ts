@@ -1,0 +1,21 @@
+import globalJson from './global.json';
+import homeJson from './home.json';
+import ngmJson from './ngm.json';
+import kidsJson from './kids.json';
+import elementaryJson from './elementary.json';
+import youthJson from './youth.json';
+import staffJson from './staff.json';
+import sermonJson from './sermon.json';
+import galleryJson from './gallery.json';
+import noticeJson from './notice.json';
+
+export const globalMeta = globalJson as any;
+export const homeMeta = homeJson as any;
+export const ngmMeta = ngmJson as any;
+export const kidsMeta = kidsJson as any;
+export const elementaryMeta = elementaryJson as any;
+export const youthMeta = youthJson as any;
+export const staffMeta = staffJson as any;
+export const sermonMeta = sermonJson as any;
+export const galleryMeta = galleryJson as any;
+export const noticeMeta = noticeJson as any;

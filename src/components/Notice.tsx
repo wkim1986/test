@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const NoticeItem = ({ item, accentColor }: any) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,7 @@ const NoticeItem = ({ item, accentColor }: any) => {
       backgroundColor: '#fff',
       overflow: 'hidden',
       transition: 'all 0.3s ease',
-      boxShadow: isOpen ? '0 10px 20px rgba(0,0,0,0.05)' : '0 2px 8px rgba(0,0,0,0.02)'
+      boxShadow: 'none'
     }}>
       <div 
         onClick={() => setIsOpen(!isOpen)}

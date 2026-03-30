@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Education = ({ data }: { data?: any }) => {
   if (!data) return null;
 
@@ -65,8 +63,7 @@ const Education = ({ data }: { data?: any }) => {
         <h4 style={{ textAlign: 'center', fontSize: '24px', fontWeight: '900', marginBottom: '35px', color: accentColor }}>{data.curriculumTitle}</h4>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '15px' }}>
           {data.curriculum?.map((item: any, idx: number) => (
-            <div key={idx} style={{ backgroundColor: '#FFF', padding: '25px 20px', border: baseBorder, boxShadow: `6px 6px 0px ${accentColor}` }}>
-              <span style={{ fontWeight: '900', color: accentColor, fontSize: '14px' }}>{item.id}</span>
+            <div key={idx} style={{ backgroundColor: '#FFF', padding: '25px 20px', border: baseBorder, boxShadow: 'none' }}>
               <h5 style={{ fontWeight: '900', margin: '10px 0', fontSize: '18px' }}>{item.title}</h5>
               <p style={{ fontSize: '14px', lineHeight: '1.5', color: '#444' }}>{item.desc}</p>
             </div>

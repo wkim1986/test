@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SectionHeader = ({ data }: { data?: any }) => {
   if (!data) return null;
 
@@ -38,6 +36,15 @@ const SectionHeader = ({ data }: { data?: any }) => {
         color: systemAccent,
         margin: '0',
         letterSpacing: '-1px'
+        ,
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        // 밋밋함 완화: 타이틀에 미세한 그라데이션 텍스트를 적용
+        backgroundImage: `linear-gradient(90deg, ${systemAccent}, rgba(0,0,0,0.85))`,
+        WebkitBackgroundClip: 'text',
+        backgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
       }}>
         {title}
       </h2>

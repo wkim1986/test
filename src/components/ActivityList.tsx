@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ActivityList = ({ data }: { data?: any }) => {
   if (!data?.items || data.items.length === 0) return null;
 

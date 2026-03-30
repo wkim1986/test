@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const VisionCard = ({ item, theme, index }: any) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -27,9 +27,7 @@ const VisionCard = ({ item, theme, index }: any) => {
           ? (isHovered ? 'translateY(-10px)' : 'translateY(0)') 
           : 'translateY(20px)',
         transition: 'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)', 
-        boxShadow: isHovered 
-          ? `0 20px 35px rgba(0,0,0,0.08)` 
-          : '0 4px 12px rgba(0,0,0,0.02)',
+        boxShadow: 'none',
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>

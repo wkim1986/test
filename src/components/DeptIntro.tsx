@@ -1,5 +1,3 @@
-import React from 'react';
-
 const DeptIntro = ({ data }: { data?: any }) => {
   if (!data) return null;
 
@@ -35,7 +33,7 @@ const DeptIntro = ({ data }: { data?: any }) => {
         fontWeight: '800', 
         marginBottom: '20px', 
         color: accentColor, 
-        letterSpacing: '-1px' 
+        letterSpacing: '-1px',
       }}>
         {data.title}
       </h2>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Footer = ({ data }: { data?: any }) => {
   if (!data) return null;
 

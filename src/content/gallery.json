@@ -1,0 +1,48 @@
+{
+  "galleryData": {
+    "title": "갤러리",
+    "description": "# Next Generation Ministry Gallery",
+    "cols": 3,
+    "categories": [
+      {
+        "id": "kids",
+        "label": "유아부",
+        "items": [
+          {
+            "title": "유아부 봄나들이",
+            "url": "https://picsum.photos/800/600?random=1",
+            "date": "2026.03.01"
+          },
+          {
+            "title": "동화 구연 시간",
+            "url": "https://picsum.photos/800/600?random=2",
+            "date": "2026.03.05"
+          }
+        ]
+      },
+      {
+        "id": "elementary",
+        "label": "초등부",
+        "items": [
+          {
+            "title": "초등부 축구대회",
+            "url": "https://picsum.photos/800/600?random=3",
+            "date": "2026.03.10"
+          }
+        ]
+      },
+      {
+        "id": "youth",
+        "label": "청소년부",
+        "items": [
+          {
+            "title": "청소년 비전 캠프",
+            "url": "https://picsum.photos/800/600?random=5",
+            "date": "2026.03.15"
+          }
+        ]
+      }
+    ],
+    "footer": "© 차세대교육국 갤러리"
+  }
+}

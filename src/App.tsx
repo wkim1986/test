@@ -1,11 +1,123 @@
-import PageBuilder from './builder/PageBuilder';
+import React, { useEffect, useRef, useState } from 'react';
+import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
-function App() {
+import { globalMeta } from './content/metadata';
+import SiteHeader from './components/SiteHeader';
+
+import Home from './pages/Home';
+import Ngm from './pages/Ngm';
+import Kids from './pages/Kids';
+import Elementary from './pages/Elementary';
+import Youth from './pages/Youth';
+import Staff from './pages/Staff';
+import Sermon from './pages/Sermon';
+import Gallery from './pages/Gallery';
+import Notice from './pages/Notice';
+import Laboratory from './pages/Laboratory';
+
+import { normalizePath, pageOrder } from './lib/pagesConfig';
+
+const SWIPE_THRESHOLD_PX = 60;
+const VERTICAL_TOLERANCE_PX = 80;
+
+const App = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  const headerHeight = globalMeta.layout?.header?.height || '100px';
+
+  // ✅ 페이지 전환 시 스크롤 최상단 이동
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location]);
+
+  // ✅ 모바일 여부 확인
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+
+    updateIsMobile();
+    mediaQuery.addEventListener('change', updateIsMobile);
+    return () => mediaQuery.removeEventListener('change', updateIsMobile);
+  }, []);
+
+  const startPointRef = useRef<{ x: number; y: number } | null>(null);
+
+  const swipeToPage = (direction: 'left' | 'right') => {
+    const currentPath = normalizePath(location.pathname);
+    const currentIndex = pageOrder.findIndex((p) => normalizePath(p) === currentPath);
+    if (currentIndex === -1) return;
+
+    const delta = direction === 'left' ? 1 : -1;
+    const nextIndex = (currentIndex + delta + pageOrder.length) % pageOrder.length;
+
+    navigate(pageOrder[nextIndex]);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!isMobile) return;
+
+    const touch = e.touches[0];
+    if (!touch) return;
+
+    startPointRef.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!isMobile) return;
+    if (!startPointRef.current) return;
+
+    const touch = e.changedTouches[0];
+    if (!touch) return;
+
+    const dx = touch.clientX - startPointRef.current.x; // -: left, +: right
+    const dy = touch.clientY - startPointRef.current.y;
+    startPointRef.current = null;
+
+    // 가로 스와이프일 때만 동작
+    if (Math.abs(dx) < SWIPE_THRESHOLD_PX) return;
+    if (Math.abs(dy) > VERTICAL_TOLERANCE_PX && Math.abs(dy) > Math.abs(dx)) return;
+
+    if (dx < 0) swipeToPage('left');
+    else swipeToPage('right');
+  };
+
+  const touchHandlers = isMobile
+    ? { onTouchStart: handleTouchStart, onTouchEnd: handleTouchEnd }
+    : {};
+
   return (
-    <div className="App">
-      <PageBuilder />
+    <div
+      {...touchHandlers}
+      style={{
+        minHeight: '100dvh',
+        backgroundColor: globalMeta.layout?.body?.backgroundColor || '#ffffff',
+        touchAction: 'pan-y',
+      }}
+    >
+      <SiteHeader />
+
+      <div style={{ paddingTop: headerHeight }}>
+        <div className="routeView" key={location.pathname}>
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/N.G.M" element={<Ngm />} />
+            <Route path="/kids" element={<Kids />} />
+            <Route path="/elementary" element={<Elementary />} />
+            <Route path="/youth" element={<Youth />} />
+            <Route path="/staff" element={<Staff />} />
+            <Route path="/sermon" element={<Sermon />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/notice" element={<Notice />} />
+            <Route path="/laboratory" element={<Laboratory />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

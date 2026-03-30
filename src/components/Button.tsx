@@ -1,16 +1,17 @@
-import React from 'react';
-import pagePlansRaw from '../data/PagePlan.json';
+import { useNavigate } from 'react-router-dom';
+
+import { getThemeColorForPath } from '../lib/pagesConfig';
 
 const Button = ({ data }: { data?: any }) => {
+  const navigate = useNavigate();
   if (!data || !data.items) return null;
-
-  const allPlans = pagePlansRaw as any;
   const itemCount = data.items.length;
 
   const buttonStyle = (item: any) => {
     const isCircle = data.shape === 'circle';
     const finalRadius = isCircle ? '50%' : (data.borderRadius || '30px');
-    const themeColor = allPlans[item.link]?.themeColor || item.color || '#ffffff';
+    const isInternalLink = item.link && !item.link.startsWith('http');
+    const themeColor = (isInternalLink ? getThemeColorForPath(item.link) : undefined) || item.color || '#ffffff';
 
     return {
       background: `linear-gradient(145deg, ${themeColor}15, ${themeColor}40)`, 
@@ -30,10 +31,8 @@ const Button = ({ data }: { data?: any }) => {
       width: '100%',
       aspectRatio: '1 / 1',
       padding: '24px',
-      boxShadow: `
-        0 4px 6px rgba(0, 0, 0, 0.02),
-        0 20px 40px ${themeColor}25
-      `,
+      boxShadow: 'none',
+      // 그림자 효과 제거
       transition: 'all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)',
       position: 'relative' as const,
       userSelect: 'none' as const,
@@ -50,9 +49,8 @@ const Button = ({ data }: { data?: any }) => {
     }
 
     if (item.link && !item.link.startsWith('http')) {
-      window.history.pushState({}, '', item.link);
-      window.dispatchEvent(new PopStateEvent('popstate'));
-      window.scrollTo(0, 0);
+      navigate(item.link);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -69,19 +67,17 @@ const Button = ({ data }: { data?: any }) => {
     }}>
       {data.items.map((item: any) => {
         const isExternal = item.link && item.link.startsWith('http');
-        const themeColor = allPlans[item.link]?.themeColor || item.color || '#ffffff';
+        const themeColor = (!isExternal && item.link ? getThemeColorForPath(item.link) : undefined) || item.color || '#ffffff';
 
         const interactionEvents = {
           onMouseEnter: (e: any) => {
             e.currentTarget.style.transform = 'translateY(-12px) scale(1.02)';
             e.currentTarget.style.background = `linear-gradient(145deg, ${themeColor}30, ${themeColor}60)`;
-            e.currentTarget.style.boxShadow = `0 30px 60px ${themeColor}40`;
             e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.8)';
           },
           onMouseLeave: (e: any) => {
             e.currentTarget.style.transform = 'translateY(0) scale(1)';
             e.currentTarget.style.background = `linear-gradient(145deg, ${themeColor}15, ${themeColor}40)`;
-            e.currentTarget.style.boxShadow = `0 4px 6px rgba(0, 0, 0, 0.02), 0 20px 40px ${themeColor}25`;
             e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
           },
           onMouseDown: (e: any) => {
@@ -94,7 +90,7 @@ const Button = ({ data }: { data?: any }) => {
             <div style={{ 
               fontSize: itemCount > 7 ? '40px' : '56px', 
               marginBottom: '12px',
-              filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.1))'
+              filter: 'none',
             }}>
               {item.icon}
             </div>

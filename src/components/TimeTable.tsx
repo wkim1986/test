@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TimeTable = ({ data }: { data?: any }) => {
   if (!data?.times || data.times.length === 0) return null;
 

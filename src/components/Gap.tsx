@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Gap = ({ data }: any) => {
   const height = data?.height || '0px';
   

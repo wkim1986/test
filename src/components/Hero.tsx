@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Hero = ({ data }: { data?: any }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

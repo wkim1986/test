@@ -1,0 +1,40 @@
+{
+  "kidsIntro": {
+    "age": "0-7세",
+    "title": "유아처 소개",
+    "description": "유아처는 차세대교육국의 0세부터 학령 전의 아이들이 '복있는 사람'으로 성장할 수 있도록 교육하고 있습니다."
+  },
+  "kidsPhoto": {
+    "src": "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "width": "1000px",
+    "height": "300px",
+    "borderRadius": "0px"
+  },
+  "kidsActivity": {
+    "title": "중점 사역",
+    "items": [
+      "부서별(영아A, 영아B, 영아C, 유치A, 유치B, 유치C) 예배 및 사역, 절기 예배",
+      "교육목자 기도회, 월드캠프, 열매마켓/열매시상식",
+      "월별 암송송, 부모교육"
+    ]
+  },
+  "kidsTime": {
+    "times": [
+      {
+        "label": "영아부 (0~3세)",
+        "time": "주일 오전 9:30(A부), 11:30(B부)",
+        "location": "자모실"
+      },
+      {
+        "label": "유치부 (4~7세)",
+        "time": "주일 오전 9:30(A부), 11:30(B부)",
+        "location": "유아처 예배실"
+      },
+      {
+        "label": "통합부 (0~7세)",
+        "time": "주일 오후 1:30",
+        "location": "유아처 예배실"
+      }
+    ]
+  }
+}

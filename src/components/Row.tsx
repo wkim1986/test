@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Row = ({ data }: { data?: any }) => {
   if (!data || !data.children) return null;
 
