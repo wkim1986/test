@@ -19,7 +19,6 @@ const Placeholder = () => {
     >
       <span style={{ fontSize: '50px' }}>🚧</span>
       <h2 style={{ fontSize: '20px', fontWeight: '600', color: '#888' }}>공사 중 ...</h2>
-      <p style={{ fontSize: '14px', color: '#bbb' }}>새롭게 정비하여 찾아뵙겠습니다.</p>
     </div>
   );
 };
@@ -40,7 +39,7 @@ const PageShell = ({
     boxSizing: 'border-box',
     backgroundColor: layoutBody.backgroundColor || '#ffffff',
     ...layoutBody,
-    paddingTop: 0, // 빌더(Room)가 하던 것처럼 상단 padding을 제거합니다.
+    paddingTop: 0,
     justifyContent: isEmptyBody ? 'center' : 'flex-start',
     minHeight: isEmptyBody ? '90vh' : 'auto',
     gap: '20px',

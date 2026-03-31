@@ -36,27 +36,15 @@ const TableRow = ({ item }: any) => (
     fontSize: '14px',
     alignItems: 'center'
   }}>
-    <div style={{
-      flex: 1,
-      fontWeight: '700',
-      color: '#333'
-    }}>
+    <div style={{ flex: "1 1 0", fontWeight: '700', color: '#333', textAlign: 'left' }}>
       {item.label}
     </div>
 
-    <div style={{
-      flex: 1.5,
-      color: '#666',
-      textAlign: 'center'
-    }}>
+    <div style={{ flex: "1 1 0", color: '#666', textAlign: 'left' }}>
       {item.time}
     </div>
 
-    <div style={{
-      flex: 1,
-      color: '#888',
-      textAlign: 'right'
-    }}>
+    <div style={{ flex: "1 1 0", color: '#888', textAlign: 'left' }}>
       {item.location}
     </div>
   </div>
