@@ -10,9 +10,7 @@ const Gallery = () => {
 
   return (
     <PageShell>
-      <div style={{ height: '60px' }} />
       <PictureCard data={{ ...galleryMeta.galleryData, theme }} />
-      <div style={{ height: '200px' }} />
     </PageShell>
   );
 };

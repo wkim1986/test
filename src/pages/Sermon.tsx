@@ -10,9 +10,7 @@ const Sermon = () => {
 
   return (
     <PageShell>
-      <div style={{ height: '60px' }} />
       <MediaCard data={{ ...sermonMeta.sermonData, theme }} />
-      <div style={{ height: '200px' }} />
     </PageShell>
   );
 };

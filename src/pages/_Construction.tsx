@@ -1,2 +1,2 @@
 import PageShell from './PageShell';
-export default () => <PageShell isEmptyBody />;
+export default () => <PageShell isEmpty />;

@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 
 import { globalMeta } from '../content/metadata';
-import Footer from '../components/Footer';
 
 const style: React.CSSProperties = {
   ...globalMeta.layout.body,
@@ -9,13 +8,12 @@ const style: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  gap: '20px',
 };
 
 const Placeholder = () => (
   <div style={{
     textAlign: 'center',
-    padding: '100px 20px',
+    padding: '120px',
     color: '#aaa',
     display: 'flex',
     flexDirection: 'column',
@@ -27,21 +25,13 @@ const Placeholder = () => (
   </div>
 );
 
-const PageShell = ({ children, isEmptyBody }: {
+const PageShell = ({ children, isEmpty }: {
   children?: ReactNode;
-  isEmptyBody?: boolean;
+  isEmpty?: boolean;
 }) => (
-  <div>
-    <main style={style}>
-      {isEmptyBody ? <Placeholder /> : children}
-    </main>
-
-    {!isEmptyBody && (
-      <footer style={globalMeta.layout.footer}>
-        <Footer data={globalMeta.footer} />
-      </footer>
-    )}
-  </div>
+  <main style={style}>
+    {isEmpty ? <Placeholder /> : children}
+  </main>
 );
 
 export default PageShell;

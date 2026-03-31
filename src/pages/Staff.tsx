@@ -10,9 +10,7 @@ const Staff = () => {
 
   return (
     <PageShell>
-      <div style={{ height: '60px' }} />
       <StaffCard data={{ ...staffMeta.staffData, theme }} />
-      <div style={{ height: '200px' }} />
     </PageShell>
   );
 };

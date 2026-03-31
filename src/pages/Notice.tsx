@@ -10,9 +10,7 @@ const Notice = () => {
 
   return (
     <PageShell>
-      <div style={{ height: '60px' }} />
       <NoticeComponent data={{ ...noticeMeta.noticeData, theme }} />
-      <div style={{ height: '200px' }} />
     </PageShell>
   );
 };

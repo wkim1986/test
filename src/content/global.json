@@ -6,7 +6,8 @@
     },
     "body": {
       "width": "100%",
-      "paddingBottom": "80px",
+      "paddingTop": "60px",
+      "paddingBottom": "60px",
       "backgroundColor": "#f9fafb"
     },
     "footer": {

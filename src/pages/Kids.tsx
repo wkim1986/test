@@ -7,6 +7,7 @@ import TimeTable from '../components/TimeTable';
 
 import PageShell from './PageShell';
 import { getThemeColorForPath, getThemePalette } from '../lib/pagesConfig';
+import { Spacer } from '../lib/pagesUtil';
 
 const Kids = () => {
   const color = getThemeColorForPath('/kids');
@@ -14,14 +15,12 @@ const Kids = () => {
 
   return (
     <PageShell>
-      <div style={{ height: '50px' }} />
       <DeptIntro data={{ ...kidsMeta.kidsIntro, theme }} />
-      <div style={{ height: '10px' }} />
+      <Spacer size={40} />
       <Picture data={kidsMeta.kidsPhoto} />
-      <div style={{ height: '20px' }} />
+      <Spacer />
       <Row
         data={{
-          gap: '40px',
           children: [
             <ActivityList key="kids-activity" data={{ ...kidsMeta.kidsActivity, theme }} />,
             <TimeTable key="kids-time" data={{ ...kidsMeta.kidsTime, theme }} />,
