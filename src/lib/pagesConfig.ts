@@ -18,17 +18,17 @@ export const pageOrder = [
 ] as const;
 
 export const pageThemeColorByPath: Record<string, string> = {
-  '/': '#d4a373',
-  '/N.G.M': '#33201d',
-  '/kids': '#00e93a',
-  '/elementary': '#caa300',
-  '/youth': '#00DEFF',
-  '/staff': '#FF80BC',
-  '/sermon': '#fae100',
-  '/gallery': '#0004ff',
-  '/notice': '#d4a373',
-  '/laboratory': '#ff5e00',
-};
+  '/': '#6D4C41',
+  '/N.G.M': '#455A64',
+  '/kids': '#00C853',
+  '/elementary': '#FFAB00',
+  '/youth': '#2979FF',
+  '/staff': '#8D6E63',
+  '/sermon': '#6A1B9A',
+  '/gallery': '#00B8D4',
+  '/notice': '#FF6D00',
+  '/laboratory': '#C62828',
+}
 
 export const getThemePalette = (baseColor: string) => {
   if (!baseColor) {
