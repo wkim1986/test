@@ -100,7 +100,7 @@ const App = () => {
         <div className="routeView" key={location.pathname}>
           <Routes location={location}>
             <Route path="/" element={<Home />} />
-            <Route path="/Intro" element={<Intro />} />
+            <Route path="/intro" element={<Intro />} />
             <Route path="/kids" element={<Kids />} />
             <Route path="/elementary" element={<Elementary />} />
             <Route path="/youth" element={<Youth />} />

@@ -1,6 +1,5 @@
 import { homeMeta } from '../content/metadata';
 import Hero from '../components/Hero';
-import Gap from '../components/Gap';
 import SectionHeader from '../components/SectionHeader';
 import Vision from '../components/Vision';
 

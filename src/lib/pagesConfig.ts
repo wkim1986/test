@@ -6,7 +6,7 @@ export const normalizePath = (path: string) => {
 
 export const pageOrder = [
   '/',
-  '/ngm',
+  '/intro',
   '/kids',
   '/elementary',
   '/youth',
@@ -19,7 +19,7 @@ export const pageOrder = [
 
 export const pageThemeColorByPath: Record<string, string> = {
   '/': '#6D4C41',
-  '/ngm': '#455A64',
+  '/intro': '#455A64',
   '/kids': '#00C853',
   '/elementary': '#FFAB00',
   '/youth': '#2979FF',
