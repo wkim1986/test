@@ -1,5 +1,4 @@
 import { sermonMeta } from '../content/metadata';
-import Gap from '../components/Gap';
 import MediaCard from '../components/MediaCard';
 
 import PageShell from './PageShell';
@@ -11,9 +10,9 @@ const Sermon = () => {
 
   return (
     <PageShell>
-      <Gap data={{ height: '60px' }} />
+      <div style={{ height: '60px' }} />
       <MediaCard data={{ ...sermonMeta.sermonData, theme }} />
-      <Gap data={{ height: '200px' }} />
+      <div style={{ height: '200px' }} />
     </PageShell>
   );
 };

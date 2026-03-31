@@ -1,6 +1,5 @@
 import { youthMeta } from '../content/metadata';
 import DeptIntro from '../components/DeptIntro';
-import Gap from '../components/Gap';
 import Picture from '../components/Picture';
 import Row from '../components/Row';
 import ActivityList from '../components/ActivityList';
@@ -15,11 +14,11 @@ const Youth = () => {
 
   return (
     <PageShell>
-      <Gap data={{ height: '50px' }} />
+      <div style={{ height: '50px' }} />
       <DeptIntro data={{ ...youthMeta.youthIntro, theme }} />
-      <Gap data={{ height: '10px' }} />
+      <div style={{ height: '10px' }} />
       <Picture data={youthMeta.youthPhoto} />
-      <Gap data={{ height: '20px' }} />
+      <div style={{ height: '20px' }} />
       <Row
         data={{
           gap: '40px',

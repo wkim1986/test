@@ -1,6 +1,5 @@
 import { kidsMeta } from '../content/metadata';
 import DeptIntro from '../components/DeptIntro';
-import Gap from '../components/Gap';
 import Picture from '../components/Picture';
 import Row from '../components/Row';
 import ActivityList from '../components/ActivityList';

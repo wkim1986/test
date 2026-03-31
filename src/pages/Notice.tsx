@@ -1,5 +1,4 @@
 import { noticeMeta } from '../content/metadata';
-import Gap from '../components/Gap';
 import NoticeComponent from '../components/Notice';
 
 import PageShell from './PageShell';
@@ -11,9 +10,9 @@ const Notice = () => {
 
   return (
     <PageShell>
-      <Gap data={{ height: '60px' }} />
+      <div style={{ height: '60px' }} />
       <NoticeComponent data={{ ...noticeMeta.noticeData, theme }} />
-      <Gap data={{ height: '200px' }} />
+      <div style={{ height: '200px' }} />
     </PageShell>
   );
 };

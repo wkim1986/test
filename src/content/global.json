@@ -27,55 +27,53 @@
       "taglineSize": "14px"
     }
   },
-  "navbar": {
-    "items": [
-      {
-        "id": 1,
-        "name": "교육국 소개",
-        "path": "/intro"
-      },
-      {
-        "id": 2,
-        "name": "유아처",
-        "path": "/kids"
-      },
-      {
-        "id": 3,
-        "name": "초등처",
-        "path": "/elementary"
-      },
-      {
-        "id": 4,
-        "name": "청소년처",
-        "path": "/youth"
-      },
-      {
-        "id": 5,
-        "name": "섬기는 사람들",
-        "path": "/staff"
-      },
-      {
-        "id": 6,
-        "name": "말씀",
-        "path": "/sermon"
-      },
-      {
-        "id": 7,
-        "name": "갤러리",
-        "path": "/gallery"
-      },
-      {
-        "id": 8,
-        "name": "공지사항",
-        "path": "/notice"
-      },
-      {
-        "id": 9,
-        "name": "복있는 교육 연구소",
-        "path": "/lab"
-      }
-    ]
-  },
+  "navbar": [
+    {
+      "id": 1,
+      "name": "교육국 소개",
+      "path": "/intro"
+    },
+    {
+      "id": 2,
+      "name": "유아처",
+      "path": "/kids"
+    },
+    {
+      "id": 3,
+      "name": "초등처",
+      "path": "/elementary"
+    },
+    {
+      "id": 4,
+      "name": "청소년처",
+      "path": "/youth"
+    },
+    {
+      "id": 5,
+      "name": "섬기는 사람들",
+      "path": "/staff"
+    },
+    {
+      "id": 6,
+      "name": "말씀",
+      "path": "/sermon"
+    },
+    {
+      "id": 7,
+      "name": "갤러리",
+      "path": "/gallery"
+    },
+    {
+      "id": 8,
+      "name": "공지사항",
+      "path": "/notice"
+    },
+    {
+      "id": 9,
+      "name": "복있는 교육 연구소",
+      "path": "/lab"
+    }
+  ],
   "footer": {
     "title": "강남중앙침례교회 차세대교육국",
     "content": "서울특별시 강남구 논현로164길 8 | Tell. 02-xxx-xxxx | Email. xxxx @ xxxx",

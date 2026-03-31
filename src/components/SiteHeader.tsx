@@ -29,7 +29,7 @@ const SiteHeader = () => {
     >
       <Logo data={globalMeta.logo} />
       <div style={{ flex: 1 }} />
-      <Navbar data={globalMeta.navbar} />
+      <Navbar items={globalMeta.navbar} />
     </div>
   );
 };

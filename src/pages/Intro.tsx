@@ -1,6 +1,5 @@
 import { introMeta } from '../content/metadata';
 import Button from '../components/Button';
-import Gap from '../components/Gap';
 import Education from '../components/Education';
 
 import PageShell from './PageShell';
@@ -12,9 +11,9 @@ const Intro = () => {
 
   return (
     <PageShell>
-      <Gap data={{ height: '60px' }} />
+      <div style={{ height: '60px' }} />
       <Button data={introMeta.button} />
-      <Gap data={{ height: '40px' }} />
+      <div style={{ height: '40px' }} />
       <Education data={{ ...introMeta.education, theme }} />
     </PageShell>
   );

@@ -3,8 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { getThemeColorForPath, normalizePath } from '../lib/pagesConfig';
 
-const Navbar = ({ data }: { data?: any }) => {
-  const navItems = data?.items || [];
+const Navbar = ({ items }: { items?: any }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -21,7 +20,7 @@ const Navbar = ({ data }: { data?: any }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  if (navItems.length === 0) return null;
+  if (items.length === 0) return null;
 
   const renderNavItem = (item: any, { asButton }: { asButton?: boolean } = {}) => {
     const normalizedItemPath = normalizePath(item.path);
@@ -91,7 +90,7 @@ const Navbar = ({ data }: { data?: any }) => {
               overflow: 'hidden',
             }}
           >
-            {navItems.map((item: any) => renderNavItem(item))}
+            {items.map((item: any) => renderNavItem(item))}
           </ul>
         </div>
 
@@ -121,7 +120,7 @@ const Navbar = ({ data }: { data?: any }) => {
       >
         <div className="navbar-drawer" onClick={(e) => e.stopPropagation()}>
           <div className="navbar-drawerTitle">메뉴</div>
-          {navItems.map((item: any) => renderNavItem(item, { asButton: true }))}
+          {items.map((item: any) => renderNavItem(item, { asButton: true }))}
         </div>
       </div>
     </>
