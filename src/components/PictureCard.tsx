@@ -180,7 +180,7 @@ const PictureCard = ({ data, themeColor }: { data?: any, themeColor?: string }) 
 
   return (
     <div style={{
-      width: '100%', maxWidth: '1200px', margin: '0 auto',
+      width: '100%', maxWidth: '1400px', margin: '0 auto',
       padding: '0 5%', fontFamily: 'Pretendard, sans-serif'
     }}>
       <header style={{ marginBottom: '40px', textAlign: 'center' }}>

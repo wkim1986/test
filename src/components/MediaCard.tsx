@@ -128,7 +128,7 @@ const MediaCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
   }, [currentCategory]);
 
   return (
-    <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 5%', fontFamily: 'Pretendard, sans-serif' }}>
+    <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', padding: '0 5%', fontFamily: 'Pretendard, sans-serif' }}>
       <header style={{ marginBottom: '40px', textAlign: 'center' }}>
         <h1 style={{ fontSize: '28px', fontWeight: '800', color: '#111', margin: '0 0 12px 0' }}>
           {data.title}
@@ -207,6 +207,7 @@ const MediaCard = ({ data, themeColor }: { data?: any, themeColor?: string }) =>
             <iframe
               width="100%" height="100%"
               src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
+              style={{ border: 'none' }}
               allowFullScreen
               title="Youtube Video Player"
             />
