@@ -13,7 +13,7 @@ import Staff from './pages/Staff';
 import Sermon from './pages/Sermon';
 import Gallery from './pages/Gallery';
 import Notice from './pages/Notice';
-import Laboratory from './pages/Laboratory';
+import Lab from './pages/Lab';
 
 import { normalizePath, pageOrder } from './lib/pagesConfig';
 
@@ -100,7 +100,7 @@ const App = () => {
         <div className="routeView" key={location.pathname}>
           <Routes location={location}>
             <Route path="/" element={<Home />} />
-            <Route path="/N.G.M" element={<Ngm />} />
+            <Route path="/ngm" element={<Ngm />} />
             <Route path="/kids" element={<Kids />} />
             <Route path="/elementary" element={<Elementary />} />
             <Route path="/youth" element={<Youth />} />
@@ -108,7 +108,7 @@ const App = () => {
             <Route path="/sermon" element={<Sermon />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/notice" element={<Notice />} />
-            <Route path="/laboratory" element={<Laboratory />} />
+            <Route path="/lab" element={<Lab />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>

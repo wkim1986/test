@@ -1,8 +1,8 @@
 import PageShell from './PageShell';
 
-const Laboratory = () => {
+const Lab = () => {
   return <PageShell isEmptyBody />;
 };
 
-export default Laboratory;
+export default Lab;
 

@@ -49,7 +49,7 @@
       {
         "id": 1,
         "name": "교육국 소개",
-        "path": "/N.G.M"
+        "path": "/ngm"
       },
       {
         "id": 2,
@@ -89,7 +89,7 @@
       {
         "id": 9,
         "name": "복있는 교육 연구소",
-        "path": "/laboratory"
+        "path": "/lab"
       }
     ]
   },

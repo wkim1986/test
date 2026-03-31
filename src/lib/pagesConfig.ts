@@ -6,7 +6,7 @@ export const normalizePath = (path: string) => {
 
 export const pageOrder = [
   '/',
-  '/N.G.M',
+  '/ngm',
   '/kids',
   '/elementary',
   '/youth',
@@ -14,12 +14,12 @@ export const pageOrder = [
   '/sermon',
   '/gallery',
   '/notice',
-  '/laboratory',
+  '/lab',
 ] as const;
 
 export const pageThemeColorByPath: Record<string, string> = {
   '/': '#6D4C41',
-  '/N.G.M': '#455A64',
+  '/ngm': '#455A64',
   '/kids': '#00C853',
   '/elementary': '#FFAB00',
   '/youth': '#2979FF',
@@ -27,7 +27,7 @@ export const pageThemeColorByPath: Record<string, string> = {
   '/sermon': '#6A1B9A',
   '/gallery': '#00B8D4',
   '/notice': '#FF6D00',
-  '/laboratory': '#C62828',
+  '/lab': '#C62828',
 }
 
 export const getThemePalette = (baseColor: string) => {
