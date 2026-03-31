@@ -8,15 +8,15 @@ import PageShell from './PageShell';
 import { getThemeColorForPath, getThemePalette } from '../lib/pagesConfig';
 
 const Home = () => {
-  const themeColor = getThemeColorForPath('/');
-  const theme = getThemePalette(themeColor);
+  const color = getThemeColorForPath('/');
+  const theme = getThemePalette(color);
 
   return (
     <PageShell>
       <Hero data={homeMeta.hero} />
-      <Gap data={{ height: '30px' }} />
+      <div style={{ height: '30px' }} />
       <SectionHeader data={{ ...homeMeta.visionHeader, theme }} />
-      <Gap data={{ height: '10px' }} />
+      <div style={{ height: '30px' }} />
       <Vision data={{ ...homeMeta.vision, theme }} />
     </PageShell>
   );

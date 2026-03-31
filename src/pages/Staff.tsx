@@ -6,8 +6,8 @@ import PageShell from './PageShell';
 import { getThemeColorForPath, getThemePalette } from '../lib/pagesConfig';
 
 const Staff = () => {
-  const themeColor = getThemeColorForPath('/staff');
-  const theme = getThemePalette(themeColor);
+  const color = getThemeColorForPath('/staff');
+  const theme = getThemePalette(color);
 
   return (
     <PageShell>

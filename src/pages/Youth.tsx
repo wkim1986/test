@@ -10,8 +10,8 @@ import PageShell from './PageShell';
 import { getThemeColorForPath, getThemePalette } from '../lib/pagesConfig';
 
 const Youth = () => {
-  const themeColor = getThemeColorForPath('/youth');
-  const theme = getThemePalette(themeColor);
+  const color = getThemeColorForPath('/youth');
+  const theme = getThemePalette(color);
 
   return (
     <PageShell>

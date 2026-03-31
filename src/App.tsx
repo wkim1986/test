@@ -5,7 +5,7 @@ import { globalMeta } from './content/metadata';
 import SiteHeader from './components/SiteHeader';
 
 import Home from './pages/Home';
-import Ngm from './pages/Ngm';
+import Intro from './pages/Intro';
 import Kids from './pages/Kids';
 import Elementary from './pages/Elementary';
 import Youth from './pages/Youth';
@@ -13,7 +13,7 @@ import Staff from './pages/Staff';
 import Sermon from './pages/Sermon';
 import Gallery from './pages/Gallery';
 import Notice from './pages/Notice';
-import Lab from './pages/Lab';
+import _Construction from './pages/_Construction';
 
 import { normalizePath, pageOrder } from './lib/pagesConfig';
 
@@ -100,7 +100,7 @@ const App = () => {
         <div className="routeView" key={location.pathname}>
           <Routes location={location}>
             <Route path="/" element={<Home />} />
-            <Route path="/ngm" element={<Ngm />} />
+            <Route path="/Intro" element={<Intro />} />
             <Route path="/kids" element={<Kids />} />
             <Route path="/elementary" element={<Elementary />} />
             <Route path="/youth" element={<Youth />} />
@@ -108,7 +108,7 @@ const App = () => {
             <Route path="/sermon" element={<Sermon />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/notice" element={<Notice />} />
-            <Route path="/lab" element={<Lab />} />
+            <Route path="/lab" element={<_Construction />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>

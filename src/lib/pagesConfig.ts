@@ -30,16 +30,12 @@ export const pageThemeColorByPath: Record<string, string> = {
   '/lab': '#C62828',
 }
 
-export const getThemePalette = (baseColor: string) => {
-  if (!baseColor) {
-    return { main: '#000000', light: '#00000033', bg: '#0000000D', dark: '#000000' };
-  }
-
+export const getThemePalette = (color: string) => {
   return {
-    main: baseColor,
-    light: `${baseColor}33`,
-    bg: `${baseColor}0D`,
-    dark: baseColor,
+    main: color,
+    bg: `${color}0D`,     // alpha 5%
+    light: `${color}33`,  // alpha 20%
+    dark: color,
   };
 };
 

@@ -10,16 +10,16 @@ import PageShell from './PageShell';
 import { getThemeColorForPath, getThemePalette } from '../lib/pagesConfig';
 
 const Kids = () => {
-  const themeColor = getThemeColorForPath('/kids');
-  const theme = getThemePalette(themeColor);
+  const color = getThemeColorForPath('/kids');
+  const theme = getThemePalette(color);
 
   return (
     <PageShell>
-      <Gap data={{ height: '50px' }} />
+      <div style={{ height: '50px' }} />
       <DeptIntro data={{ ...kidsMeta.kidsIntro, theme }} />
-      <Gap data={{ height: '10px' }} />
+      <div style={{ height: '10px' }} />
       <Picture data={kidsMeta.kidsPhoto} />
-      <Gap data={{ height: '20px' }} />
+      <div style={{ height: '20px' }} />
       <Row
         data={{
           gap: '40px',
