@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Footer from '../components/Footer';
 
 import { globalMeta } from '../content/metadata';
 
@@ -29,9 +30,19 @@ const PageShell = ({ children, isEmpty }: {
   children?: ReactNode;
   isEmpty?: boolean;
 }) => (
-  <main style={style}>
-    {isEmpty ? <Placeholder /> : children}
-  </main>
+  <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+
+    <div style={{ flex: 1 }}>
+      <main style={style}>
+        {isEmpty ? <Placeholder /> : children}
+      </main>
+    </div>
+
+    <footer style={globalMeta.layout.footer}>
+      <Footer data={globalMeta.footer} />
+    </footer>
+    
+  </div>
 );
 
 export default PageShell;
