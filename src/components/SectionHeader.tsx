@@ -1,4 +1,4 @@
-const SectionTitle = ({ data }: { data?: any }) => {
+const SectionHeader = ({ data }: { data?: any }) => {
   if (!data) return null;
 
   const color = data?.theme?.main || '#000';
@@ -55,4 +55,4 @@ const SectionTitle = ({ data }: { data?: any }) => {
   );
 };
 
-export default SectionTitle;
+export default SectionHeader;

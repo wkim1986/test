@@ -5,7 +5,20 @@ const Hero = ({ data }: { data?: any }) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = data?.images || [];
+  const {
+    images = [],
+    height = "500px",
+    overlayOpacity = 0,
+    titleSize = "70px",
+    titleWeight = "300",
+    titleTextColor = "#fff",
+    titleOpacity = 1,
+    subtitleSize = "30px",
+    subtitleWeight = "300",
+    subtitleTextColor = "#fff",
+    subtitleOpacity = 1
+  } = data;
+
   const slideInterval = (data?.interval || 3) * 1000;
 
   useEffect(() => {
@@ -17,8 +30,8 @@ const Hero = ({ data }: { data?: any }) => {
 
   return (
     <section style={{
-      width: data.width || '100%',
-      height: data.height || '500px',
+      width: '100%',
+      height,
       position: 'relative',
       overflow: 'hidden' }}>
 
@@ -36,7 +49,7 @@ const Hero = ({ data }: { data?: any }) => {
             position: 'absolute',
             top: 0, left: 0,
             width: '100%', height: '100%',
-            backgroundColor: `rgba(0,0,0,${data.overlayOpacity || 0})`,
+            backgroundColor: `rgba(0,0,0,${overlayOpacity})`,
             zIndex: 1}} />
 
           <img src={src} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -53,10 +66,10 @@ const Hero = ({ data }: { data?: any }) => {
         pointerEvents: 'none' }}>
 
         <h1 style={{
-          fontSize: data.titleSize || '70px',
-          fontWeight: data.titleWeight || '300',
-          color: data.titleTextColor || '#fff',
-          opacity: data.titleOpacity ?? 1,
+          fontSize: titleSize,
+          fontWeight: titleWeight,
+          color: titleTextColor,
+          opacity: titleOpacity,
           marginBottom: '20px',
           wordBreak: 'keep-all',
           transition: 'all 0.3s ease' }}>
@@ -64,10 +77,10 @@ const Hero = ({ data }: { data?: any }) => {
         </h1>
 
         <p style={{
-          fontSize: data.subtitleSize || '30px',
-          fontWeight: data.subtitleWeight || '300',
-          color: data.subtitleTextColor || '#fff',
-          opacity: data.subtitleOpacity ?? 1,
+          fontSize: subtitleSize,
+          fontWeight: subtitleWeight,
+          color: subtitleTextColor,
+          opacity: subtitleOpacity,
           wordBreak: 'keep-all',
           transition: 'all 0.3s ease' }}>
           {data.subtitle}

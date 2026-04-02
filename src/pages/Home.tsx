@@ -1,6 +1,6 @@
 import { homeMeta } from '../content/metadata';
 import Hero from '../components/Hero';
-import SectionTitle from '../components/SectionTitle';
+import SectionHeader from '../components/SectionHeader';
 import SectionVision from '../components/SectionVision';
 
 import PageShell from './PageShell';
@@ -15,7 +15,7 @@ const Home = () => {
       <div style={{ marginTop: "-60px" }} />
       <Hero data={homeMeta.hero} />
       <Spacer />
-      <SectionTitle data={{ ...homeMeta.header, theme }} />
+      <SectionHeader data={{ ...homeMeta.header, theme }} />
       <Spacer size={30} />
       <SectionVision data={{ ...homeMeta.vision, theme }} />
     </PageShell>
