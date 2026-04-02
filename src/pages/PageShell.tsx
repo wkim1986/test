@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 import Footer from '../components/Footer';
 
-import { globalMeta } from '../content/metadata';
+import global from '../content/global.json';
 
 const style: React.CSSProperties = {
-  ...globalMeta.layout.body,
+  ...global.layout.body,
   flex: '1 0 auto',
   display: 'flex',
   flexDirection: 'column',
@@ -38,8 +38,8 @@ const PageShell = ({ children, isEmpty }: {
       </main>
     </div>
 
-    <footer style={globalMeta.layout.footer}>
-      <Footer data={globalMeta.footer} />
+    <footer style={global.layout.footer}>
+      <Footer data={global.footer} />
     </footer>
     
   </div>

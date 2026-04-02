@@ -1,4 +1,4 @@
-import { homeMeta } from '../content/metadata';
+import home from '../content/home.json';
 import Hero from '../components/Hero';
 import SectionHeader from '../components/SectionHeader';
 import SectionVision from '../components/SectionVision';
@@ -13,11 +13,11 @@ const Home = () => {
   return (
     <PageShell>
       <div style={{ marginTop: "-60px" }} />
-      <Hero data={homeMeta.hero} />
+      <Hero data={home.hero} />
       <Spacer />
-      <SectionHeader data={{ ...homeMeta.header, theme }} />
+      <SectionHeader data={{ ...home.header, theme }} />
       <Spacer size={30} />
-      <SectionVision data={{ ...homeMeta.vision, theme }} />
+      <SectionVision data={{ ...home.vision, theme }} />
     </PageShell>
   );
 };

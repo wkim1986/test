@@ -43,6 +43,8 @@ export const getThemeByPath
   };
 };
 
+
+// Deprecated
 export const getThemePalette = (color: string) => {
   return {
     main: color,
@@ -52,6 +54,7 @@ export const getThemePalette = (color: string) => {
   };
 };
 
+// Deprecated
 export const getThemeColorForPath = (path: string) => {
   const normalized = normalizePath(path);
   return pageThemeColorByPath[normalized] || '#333';
