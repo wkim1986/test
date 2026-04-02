@@ -28,7 +28,20 @@ export const pageThemeColorByPath: Record<string, string> = {
   '/gallery': '#00B8D4',
   '/notice': '#FF6D00',
   '/lab': '#C62828',
-}
+};
+
+export const getThemeByPath
+ = (path: string) => {
+  const normalized = normalizePath(path);
+  const color = pageThemeColorByPath[normalized] || '#333';
+
+  return {
+    main: color,
+    bg: `${color}0D`,     // alpha 5%
+    light: `${color}33`,  // alpha 20%
+    dark: color,
+  };
+};
 
 export const getThemePalette = (color: string) => {
   return {
@@ -43,4 +56,3 @@ export const getThemeColorForPath = (path: string) => {
   const normalized = normalizePath(path);
   return pageThemeColorByPath[normalized] || '#333';
 };
-

@@ -1,37 +1,31 @@
 {
   "hero": {
-    "title": "세상 속에서 복이 되는 차세대",
+    "title": "",
     "subtitle": "",
     "images": [
-      "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=2070",
-      "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80&w=2070",
-      "https://images.unsplash.com/photo-1577733641835-998f7e303679?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4",
+      "https://images.unsplash.com/photo-1504052434569-70ad5836ab65",
+      "https://images.unsplash.com/photo-1577733641835-998f7e303679"
     ],
     "interval": 3,
-    "displayMode": "full",
     "width": "100%",
-    "maxWidth": "none",
     "height": "500px",
-    "marginBottom": "60px",
-    "borderRadius": "0px",
-    "backgroundColor": "#ffffff",
-    "textColor": "#ffffff",
-    "overlayOpacity": 0.4,
-    "titleSize": "150px",
-    "titleWeight": "1000",
-    "titleOpacity": 0,
-    "subtitleSize": "24px",
-    "subtitleWeight": "400",
-    "subtitleOpacity": 0.9
+    "overlayOpacity": 0.1,
+    "titleSize": "70px",
+    "titleWeight": "300",
+    "titleOpacity": 1.0,
+    "titleTextColor": "#ffffff",
+    "subtitleSize": "30px",
+    "subtitleWeight": "300",
+    "subtitleOpacity": 1.0,
+    "subtitleTextColor": "#ffffff"
   },
-  "visionHeader": {
+  "header": {
     "title": "강남중앙침례교회 차세대교육국",
-    "subtitle": "비전 및 5대 사역",
-    "accentColor": "#d4a373",
-    "linePosition": "bottom"
+    "subtitle": "비전 및 5대 사역"
   },
   "vision": {
-    "banner": "월드(W.O.R.L.D Ministry)사역을 통해 온 세상(WORLD)을 예수 그리스도께로 돌아오게한다.",
+    "title": "월드(W.O.R.L.D. Ministry) 사역을 통해 온 세상(WORLD)을 예수 그리스도께로 돌아오게 한다.",
     "items": [
       {
         "letter": "W",
