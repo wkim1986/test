@@ -18,7 +18,7 @@ const Card = ({ item, theme }: any) => {
         cursor: 'default',
         transform: (isHovered ? 'translateY(-10px)' : 'translateY(0)'),
         transition: 'all 0.4s cubic-bezier(0.25, 1, 0.5, 1)',
-        boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
+        boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
       }}>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -100,7 +100,8 @@ const SectionVision = ({ data }: { data?: any }) => {
           wordBreak: 'keep-all',
           color: titleColor,
           fontSize: titleSize,
-          fontWeight: titleWeight }}>
+          fontWeight: titleWeight,
+          boxShadow: `0 20px 40px ${theme.main}ff` }}>
             {data.title}
         </div>
 

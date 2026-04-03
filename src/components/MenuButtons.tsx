@@ -6,9 +6,10 @@ const MenuButtons = ({ data }: { data?: any }) => {
   const {
     borderRadius = "50%",
     fontSize = "20px",
+    fontWeight = 700,
     subFontSize = "12px",
     margin = "12px 0 0 -3px",
-    gridTemplateColumnSize = "180px",
+    gridMinMax = "180px",
     items = []
   } = data;
 
@@ -19,7 +20,7 @@ const MenuButtons = ({ data }: { data?: any }) => {
     alignItems: 'center',
     justifyContent: 'center',
     color: item.textColor || "#000",
-    fontWeight: 700,
+    fontWeight: fontWeight,
     borderRadius: borderRadius,
     aspectRatio: '1 / 1',
     transition: 'all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)',
@@ -39,7 +40,7 @@ const MenuButtons = ({ data }: { data?: any }) => {
   return (
     <div style={{
       display: 'grid',
-      gridTemplateColumns: `repeat(auto-fit, minmax(${gridTemplateColumnSize}, 1fr))`,
+      gridTemplateColumns: `repeat(auto-fit, minmax(${gridMinMax}, 1fr))`,
       gap: '30px',
       width: '100%',
       maxWidth: '1200px',
