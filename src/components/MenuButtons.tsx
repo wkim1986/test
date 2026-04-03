@@ -77,7 +77,7 @@ const MenuButtons = ({ data }: { data?: any }) => {
           );
         else
           return (
-            <div key={item.id} onClick={() => move(item)} style={style(item)} {...mouseEvents}>
+            <div key={item.id} onClick={() => move(item.link)} style={style(item)} {...mouseEvents}>
               {Content}
             </div>
           );
