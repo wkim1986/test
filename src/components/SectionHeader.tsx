@@ -11,7 +11,7 @@ const SectionHeader = ({ data }: { data?: any }) => {
     titleColor = color,
     titleMargin = '15px',
     subtitleFontSize = '24px',
-    subtitleFontWeight = '400',
+    subtitleFontWeight = 400,
     subtitleColor = '#888',
     subtitleMargin = '15px',
     lineWidth = '50px',

@@ -32,7 +32,7 @@ const Card = ({ item, theme }: any) => {
           alignItems: 'center',
           justifyContent: 'center',
           fontSize: '20px',
-          fontWeight: '900',
+          fontWeight: 900,
           transition: 'transform 0.3s ease',
           transform: isHovered ? 'scale(1.1)' : 'none' }}>
           {item.letter}
@@ -46,7 +46,7 @@ const Card = ({ item, theme }: any) => {
       <div style={{ marginTop: '5px' }}>
         <h3 style={{
           fontSize: '21px',
-          fontWeight: '900',
+          fontWeight: 900,
           color: '#000',
           marginBottom: '10px' }}>
           {item.title}
@@ -77,7 +77,7 @@ const SectionVision = ({ data }: { data?: any }) => {
     titleBoxPadding = "0 20px",
     titleColor = '#fff',
     titleSize = '20px',
-    titleWeight = data.titleWeight || '600',
+    titleWeight = data.titleWeight || 600,
     gridBorderColor = "#f0f0f0",
     gridMinMax = '280px'
   } = data;

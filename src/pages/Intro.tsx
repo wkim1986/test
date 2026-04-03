@@ -1,20 +1,19 @@
-import { introMeta } from '../content/metadata';
-import Button from '../components/Button';
+import intro from '../content/intro.json';
+import MenuButtons from '../components/MenuButtons';
 import Education from '../components/Education';
 
 import PageShell from './PageShell';
-import { getThemeColorForPath, getThemePalette } from '../lib/pagesConfig';
+import { getThemeByPath } from '../lib/pagesConfig';
 import { Spacer } from '../lib/pagesUtil';
 
 const Intro = () => {
-  const color = getThemeColorForPath('/intro');
-  const theme = getThemePalette(color);
+  const theme = getThemeByPath('/');
 
   return (
     <PageShell>
-      <Button data={introMeta.button} />
+      <MenuButtons data={intro.menuButtons} />
       <Spacer />
-      <Education data={{ ...introMeta.education, theme }} />
+      <Education data={{ ...intro.education, theme }} />
     </PageShell>
   );
 };

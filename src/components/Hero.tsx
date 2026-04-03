@@ -10,11 +10,11 @@ const Hero = ({ data }: { data?: any }) => {
     height = "500px",
     overlayOpacity = 0,
     titleSize = "70px",
-    titleWeight = "300",
+    titleWeight = 300,
     titleTextColor = "#fff",
     titleOpacity = 1,
     subtitleSize = "30px",
-    subtitleWeight = "300",
+    subtitleWeight = 300,
     subtitleTextColor = "#fff",
     subtitleOpacity = 1
   } = data;

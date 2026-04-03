@@ -1,14 +1,11 @@
 {
-  "button": {
-    "shape": "circle",
-    "borderRadius": "20px",
+  "menuButtons": {
     "items": [
       {
         "id": 1,
         "name": "차세대교육국 채널",
-        "color": "#ffffff",
+        "color": "#ffffff00",
         "textColor": "#000000",
-        "icon": "",
         "link": "https://www.youtube.com/@gbcnext",
         "subText": "▸ YouTube 이동"
       },
@@ -17,7 +14,6 @@
         "name": "유아처",
         "color": "#ffeace",
         "textColor": "#311e12",
-        "icon": "",
         "link": "/kids",
         "subText": "▸ 소개"
       },
@@ -26,16 +22,15 @@
         "name": "초등처",
         "color": "#fffecd",
         "textColor": "#311e12",
-        "icon": "",
         "link": "/elementary",
         "subText": "▸ 소개"
+        
       },
       {
         "id": 4,
         "name": "청소년처",
         "color": "#caffe0",
         "textColor": "#311e12",
-        "icon": "",
         "link": "/youth",
         "subText": "▸ 소개"
       },
@@ -44,7 +39,6 @@
         "name": "섬기는 사람들",
         "color": "#dbdcfd",
         "textColor": "#311e12",
-        "icon": "",
         "link": "/staff",
         "subText": "▸ 소개"
       }
